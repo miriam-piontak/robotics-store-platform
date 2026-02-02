@@ -1,0 +1,138 @@
+/* עיצוב פאנל הקלט - סגנון Cyber/Tech */
+.category-control-panel {
+    max-width: 800px;
+    margin: 0 auto 50px auto;
+    padding: 2px;
+    background: linear-gradient(90deg, #30363d, #4834d4, #30363d);
+    border-radius: 4px;
+}
+
+.input-group-cyber {
+    display: flex;
+    background: #0b0e14;
+    padding: 10px;
+    gap: 10px;
+    border-radius: 2px;
+}
+
+.category-input-cyber {
+    flex: 1;
+    background: transparent;
+    border: 1px solid #30363d;
+    padding: 12px 18px;
+    color: #fff;
+    font-family: 'Heebo', sans-serif;
+    outline: none;
+    font-size: 1rem;
+    transition: border-color 0.3s;
+}
+
+.category-input-cyber:focus {
+    border-color: #4834d4;
+}
+
+/* כפתור הוספה משוגע */
+.btn-cyber-add {
+    position: relative;
+    background: #4834d4;
+    color: white;
+    border: none;
+    padding: 0 30px;
+    font-weight: 800;
+    cursor: pointer;
+    border-radius: 4px;
+    overflow: hidden;
+    transition: all 0.3s;
+}
+
+.btn-cyber-add:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px rgba(72, 52, 212, 0.6);
+}
+
+.btn-glow {
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255,255,255,0.2) 0%, transparent 70%);
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.btn-cyber-add:hover .btn-glow {
+    opacity: 1;
+}
+
+/* רשימת הקטגוריות - שורות אלגנטיות */
+.categories-list-modern {
+    max-width: 800px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.category-item-modern {
+    background: rgba(22, 27, 34, 0.8);
+    border-right: 4px solid #4834d4; /* פס צד סגול */
+    border-top: 1px solid #30363d;
+    border-bottom: 1px solid #30363d;
+    border-left: 1px solid #30363d;
+    padding: 15px 25px;
+    display: flex;
+    align-items: center;
+    transition: all 0.3s ease;
+}
+
+.category-item-modern:hover {
+    background: #1c2128;
+    border-right-width: 8px;
+    transform: translateX(-5px);
+}
+
+.category-status-indicator {
+    width: 8px;
+    height: 8px;
+    background: #39ff14; /* ירוק ניאון */
+    border-radius: 50%;
+    margin-left: 15px;
+    box-shadow: 0 0 10px #39ff14;
+}
+
+.category-label {
+    color: #e6edf3;
+    font-size: 1.1rem;
+    font-weight: 600;
+    flex: 1;
+}
+
+/* כפתורי שליטה בשורה */
+.category-controls {
+    display: flex;
+    gap: 12px;
+}
+
+.control-btn {
+    background: transparent;
+    border: 1px solid #30363d;
+    color: #8b949e;
+    padding: 6px 15px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    cursor: pointer;
+    border-radius: 2px;
+    transition: all 0.2s;
+}
+
+.edit-btn:hover {
+    border-color: #4834d4;
+    color: #fff;
+}
+
+.delete-btn:hover {
+    border-color: #ff6b6b;
+    color: #ff6b6b;
+    background: rgba(255, 107, 107, 0.05);
+}

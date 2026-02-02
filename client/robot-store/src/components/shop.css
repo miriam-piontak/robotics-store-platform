@@ -1,0 +1,379 @@
+@import url('https://fonts.googleapis.com/css2?family=Heebo:wght@400;700;900&display=swap');
+
+/* ===== 2026 Ultra-Modern Robot Shop - Dark Tech Edition ===== */
+
+.shop-page-container {
+    padding-top: 100px;
+    background: #0b0e14;
+    min-height: 100vh;
+    direction: rtl;
+    font-family: 'Heebo', sans-serif;
+    position: relative;
+    overflow: hidden;
+}
+
+/* רקע סטטי עם grid טכנולוגי */
+.shop-page-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: 
+        linear-gradient(rgba(72, 52, 212, 0.02) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(72, 52, 212, 0.02) 1px, transparent 1px);
+    background-size: 50px 50px;
+    pointer-events: none;
+}
+
+/* זוהר מרכזי עדין */
+.shop-page-container::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: 50%;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(72, 52, 212, 0.08) 0%, transparent 70%);
+    transform: translateX(-50%);
+    pointer-events: none;
+}
+
+.shop-title {
+    text-align: center;
+    color: #ffffff;
+    font-size: clamp(2rem, 4vw, 2.5rem);
+    font-weight: 700;
+    margin-bottom: 40px;
+    letter-spacing: -0.3px;
+    position: relative;
+    z-index: 1;
+}
+
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); 
+    gap: 35px;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 20px;
+    position: relative;
+    z-index: 1;
+}
+
+/* כרטיס רובוט - עיצוב מקצועי */
+.robot-card {
+    background: #161b22;
+    border-radius: 12px;
+    border: 1px solid #30363d;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    position: relative;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* קו זוהר מסביב לכרטיס */
+.robot-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 12px;
+    padding: 1px;
+    background: linear-gradient(135deg, #4834d4, #ff6b6b, #ff9f43);
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.robot-card:hover::before {
+    opacity: 0.6;
+}
+
+.robot-card:hover {
+    transform: translateY(-4px);
+    border-color: #4834d4;
+    box-shadow: 0 8px 20px rgba(72, 52, 212, 0.2);
+}
+
+/* זוהר פנימי בהובר */
+.robot-card::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, rgba(72, 52, 212, 0.1) 0%, transparent 70%);
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+}
+
+.robot-card:hover::after {
+    opacity: 1;
+}
+
+/* מיכל תמונה מתקדם */
+.image-container {
+    width: 100%;
+    height: 240px;
+    background: linear-gradient(180deg, #0d1117 0%, #161b22 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    border-bottom: 1px solid #30363d;
+    position: relative;
+}
+
+.image-container img {
+    max-width: 85%;
+    max-height: 85%;
+    object-fit: contain;
+    transition: all 0.4s ease;
+    filter: drop-shadow(0 0 15px rgba(72, 52, 212, 0.2));
+    position: relative;
+    z-index: 1;
+}
+
+.robot-card:hover .image-container img {
+    transform: scale(1.08);
+    filter: drop-shadow(0 0 25px rgba(72, 52, 212, 0.4));
+}
+
+.card-content {
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+}
+
+.robot-name {
+    color: #ffffff;
+    font-size: 1.5rem;
+    font-weight: 800;
+    margin: 0 0 12px 0;
+    text-align: center;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+/* אפקט עדין לשם */
+.robot-card:hover .robot-name {
+    color: #4834d4;
+}
+
+.robot-price {
+    color: #39ff14;
+    font-size: 1.8rem;
+    font-weight: 900;
+    margin-bottom: 18px;
+    text-shadow: 
+        0 0 10px rgba(57, 255, 20, 0.4),
+        0 0 20px rgba(57, 255, 20, 0.2);
+    position: relative;
+}
+
+/* סקשן המלאי המשודרג */
+.stock-section {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.stock-container {
+    width: 85%;
+    height: 10px;
+    background: #0b0e14;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 8px;
+    border: 1px solid #30363d;
+    position: relative;
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.stock-bar {
+    height: 100%;
+    background: linear-gradient(90deg, #ff9f43 0%, #ff6b6b 100%);
+    border-radius: 10px;
+    transition: width 1s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    box-shadow: 
+        0 0 10px rgba(255, 159, 67, 0.5),
+        0 0 20px rgba(255, 107, 107, 0.3);
+}
+
+.stock-info {
+    color: #8b949e;
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* כפתורים מודרניים */
+.card-actions {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 12px;
+}
+
+.btn-details {
+    background: transparent;
+    color: #8b949e;
+    border: 2px solid #30363d;
+    padding: 12px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-details::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
+    transform: translate(-50%, -50%);
+    transition: width 0.4s, height 0.4s;
+    border-radius: 50%;
+}
+
+.btn-details:hover::before {
+    width: 300px;
+    height: 300px;
+}
+
+.btn-details:hover {
+    color: #ffffff;
+    background: rgba(72, 52, 212, 0.08);
+    border-color: #4834d4;
+    transform: translateY(-1px);
+}
+
+.btn-add-cart {
+    background: linear-gradient(135deg, #4834d4 0%, #5a45e5 100%);
+    color: white;
+    border: none;
+    padding: 14px 20px;
+    border-radius: 8px;
+    font-weight: 700;
+    font-size: 1rem;
+    cursor: pointer;
+    box-shadow: 
+        0 6px 0 #2a1b9a,
+        0 8px 20px rgba(72, 52, 212, 0.3);
+    transition: all 0.15s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-add-cart:hover {
+    box-shadow: 
+        0 6px 0 #2a1b9a,
+        0 8px 25px rgba(72, 52, 212, 0.4);
+    transform: translateY(-2px);
+}
+
+.btn-add-cart:active {
+    transform: translateY(4px);
+    box-shadow: 
+        0 2px 0 #2a1b9a,
+        0 4px 10px rgba(72, 52, 212, 0.3);
+}
+
+/* אנימציות כניסה עדינות */
+.robot-card {
+    animation: cardEntrance 0.5s ease-out backwards;
+}
+
+@keyframes cardEntrance {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* עיכוב מדורג */
+.robot-card:nth-child(1) { animation-delay: 0.05s; }
+.robot-card:nth-child(2) { animation-delay: 0.1s; }
+.robot-card:nth-child(3) { animation-delay: 0.15s; }
+.robot-card:nth-child(4) { animation-delay: 0.2s; }
+.robot-card:nth-child(5) { animation-delay: 0.25s; }
+.robot-card:nth-child(6) { animation-delay: 0.3s; }
+.robot-card:nth-child(7) { animation-delay: 0.35s; }
+.robot-card:nth-child(8) { animation-delay: 0.4s; }
+.robot-card:nth-child(9) { animation-delay: 0.45s; }
+
+/* רספונסיביות מתקדמת */
+@media (max-width: 768px) {
+    .shop-page-container {
+        padding-top: 80px;
+    }
+    
+    .products-grid {
+        grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+        gap: 25px;
+        padding: 15px;
+    }
+    
+    .shop-title {
+        font-size: 2.2rem;
+        margin-bottom: 30px;
+    }
+    
+    .image-container {
+        height: 200px;
+    }
+}
+
+@media (max-width: 480px) {
+    .products-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .robot-name {
+        font-size: 1.3rem;
+    }
+    
+    .robot-price {
+        font-size: 1.6rem;
+    }
+}
+
+/* מצב כהה משופר */
+@media (prefers-color-scheme: dark) {
+    .shop-page-container {
+        background: #0a0d12;
+    }
+    
+    .robot-card {
+        background: linear-gradient(145deg, #141921 0%, #181d25 100%);
+    }
+}

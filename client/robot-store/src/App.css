@@ -1,0 +1,10 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    background-color: #f0f2f5;
+}
+
+.App {
+    width: 100%;
+}

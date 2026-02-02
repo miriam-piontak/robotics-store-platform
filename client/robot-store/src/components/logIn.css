@@ -1,0 +1,119 @@
+@import url('https://fonts.googleapis.com/css2?family=Heebo:wght@400;700;900&display=swap');
+
+/* ===== 2026 Login - Professional & Balanced ===== */
+
+.auth-page-container {
+    height: 100vh; /* גובה מסך מלא */
+    background: #0b0e14;
+    display: flex;
+    justify-content: center;
+    align-items: center; /* מרכז את הכרטיס בדיוק באמצע */
+    direction: rtl;
+    font-family: 'Heebo', sans-serif;
+    padding: 0 20px;
+}
+
+/* הגריד של האתר ברקע בלבד */
+.auth-page-container::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background-image: 
+        linear-gradient(rgba(72, 52, 212, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(72, 52, 212, 0.03) 1px, transparent 1px);
+    background-size: 50px 50px;
+    pointer-events: none;
+}
+
+.auth-card {
+    background: #161b22;
+    padding: 40px;
+    border-radius: 12px;
+    border: 1px solid #30363d;
+    width: 100%;
+    max-width: 380px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6);
+    position: relative;
+    z-index: 10; /* מוודא שהכרטיס מעל הרקע */
+}
+
+/* אפקט קו סגול עדין למעלה */
+.auth-card::after {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: #4834d4;
+    border-radius: 12px 12px 0 0;
+}
+
+.auth-title {
+    color: #ffffff;
+    font-size: 1.8rem;
+    font-weight: 800;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.auth-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.auth-input {
+    background: #0d1117;
+    border: 1px solid #30363d;
+    border-radius: 8px;
+    padding: 14px 16px;
+    color: #ffffff;
+    font-size: 1rem;
+    outline: none;
+    transition: all 0.2s ease;
+    text-align: right;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* פוקוס שמרגיש טכנולוגי אבל נקי */
+.auth-input:focus {
+    border-color: #8258ff;
+    background: #11161d;
+    box-shadow: 0 0 0 2px rgba(130, 88, 255, 0.1);
+}
+
+.auth-input::placeholder {
+    color: #484f58;
+}
+
+.auth-submit-btn {
+    background: #4834d4;
+    color: white;
+    border: none;
+    padding: 14px;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    margin-top: 5px;
+    transition: all 0.2s ease;
+}
+
+.auth-submit-btn:hover {
+    background: #5a45e5;
+    transform: translateY(-1px);
+}
+
+.auth-submit-btn:active {
+    transform: translateY(1px);
+}
+
+/* אנימציה עדינה בלבד */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.auth-card {
+    animation: fadeIn 0.4s ease-out;
+}

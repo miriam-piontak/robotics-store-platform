@@ -1,0 +1,137 @@
+/* moreDetails.css */
+
+.more-details-container {
+    padding-top: 150px; /* הורדתי את הכרטיס עוד יותר למטה */
+    padding-bottom: 80px;
+    background-color: #0b0e14;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; 
+    direction: rtl;
+}
+
+/* כרטיס הפרטים - מהודק וקומפקטי */
+.details-card {
+    display: flex;
+    flex-direction: row;
+    background: #161b22;
+    border: 2px solid transparent; 
+    border-radius: 20px;
+    max-width: 800px; /* רוחב מאוזן */
+    width: 90%;
+    overflow: hidden;
+    box-shadow: 0 15px 45px rgba(0, 0, 0, 0.6);
+    transition: all 0.4s ease;
+}
+
+/* אפקט מסגרת סגולה בנגיעה */
+.details-card:hover {
+    border-color: #4834d4;
+    box-shadow: 0 0 30px rgba(72, 52, 212, 0.25);
+}
+
+/* צד התמונה */
+.image-wrap {
+    flex: 0.9;
+    background: #0d1117;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+}
+
+.image-wrap img {
+    max-width: 100%;
+    max-height: 300px;
+    object-fit: contain;
+    transition: transform 0.4s ease-out;
+}
+
+/* גדילה נקייה של התמונה */
+.image-wrap img:hover {
+    transform: scale(1.1);
+}
+
+/* צד המידע */
+.info-wrap {
+    flex: 1.1;
+    padding: 35px; 
+    display: flex;
+    flex-direction: column;
+    background: #161b22;
+    border-right: 1px solid #30363d;
+}
+
+.info-wrap h2 {
+    font-size: 2rem; /* הקטנתי מעט חזרה */
+    color: #ffffff;
+    margin-bottom: 8px;
+    letter-spacing: -0.5px;
+}
+
+.info-wrap .price {
+    font-size: 1.7rem; /* הקטנתי מעט חזרה */
+    color: #39ff14; 
+    font-weight: 800;
+    margin-bottom: 10px;
+}
+
+.info-wrap .stock {
+    font-size: 0.9rem; /* הקטנתי */
+    color: #8b949e;
+    margin-bottom: 18px;
+}
+
+/* עיצוב התיאור - טקסט נקי, קטן וברור */
+.info-wrap .desc {
+    font-size: 0.92rem; /* הכתב הוקטן למראה טכנולוגי יותר */
+    line-height: 1.6;
+    color: #c9d1d9;
+    background: rgba(255, 255, 255, 0.02);
+    padding: 15px;
+    border-radius: 12px;
+    border-right: 4px solid #4834d4;
+    margin-bottom: 25px;
+    /* הכרטיס יגדל אוטומטית לפי כמות המלל */
+}
+
+/* כפתורי פעולה */
+.actions {
+    display: flex;
+    gap: 12px;
+    margin-top: auto; 
+}
+
+.actions button {
+    flex: 1;
+    padding: 12px;
+    border-radius: 10px;
+    font-size: 0.95rem; /* הוקטן מעט */
+    font-weight: 700;
+    cursor: pointer;
+    border: none;
+    transition: 0.2s;
+}
+
+.actions button:first-child {
+    background: linear-gradient(45deg, #4834d4, #686de0);
+    color: white;
+}
+
+.actions button:last-child {
+    background-color: #30363d;
+    color: #c9d1d9;
+}
+
+.actions button:hover {
+    filter: brightness(1.2);
+}
+
+/* מובייל */
+@media (max-width: 768px) {
+    .details-card {
+        flex-direction: column;
+        margin-top: 20px;
+    }
+}

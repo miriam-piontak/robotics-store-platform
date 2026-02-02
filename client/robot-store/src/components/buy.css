@@ -1,0 +1,204 @@
+@import url('https://fonts.googleapis.com/css2?family=Heebo:wght@400;700;900&display=swap');
+
+/* ===== Order History - Dark Tech Edition ===== */
+
+.orders-container {
+    padding: 120px 20px 60px;
+    background: #0b0e14;
+    min-height: 100vh;
+    direction: rtl;
+    font-family: 'Heebo', sans-serif;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* רקע Grid טכנולוגי */
+.orders-container::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background-image: 
+        linear-gradient(rgba(72, 52, 212, 0.02) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(72, 52, 212, 0.02) 1px, transparent 1px);
+    background-size: 50px 50px;
+    pointer-events: none;
+}
+
+.title {
+    color: #ffffff;
+    font-size: clamp(2rem, 4vw, 2.5rem);
+    font-weight: 700;
+    margin-bottom: 40px;
+    position: relative;
+    z-index: 1;
+    text-align: center;
+}
+
+.orders-list {
+    width: 100%;
+    max-width: 900px;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    position: relative;
+    z-index: 1;
+}
+
+/* כרטיס הזמנה - מבוסס על ה-Robot Card */
+.order-card {
+    background: #161b22;
+    border-radius: 12px;
+    border: 1px solid #30363d;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    position: relative;
+}
+
+.order-card:hover {
+    transform: translateY(-4px);
+    border-color: #4834d4;
+    box-shadow: 0 8px 25px rgba(72, 52, 212, 0.2);
+}
+
+/* הדר הכרטיס - מספר הזמנה */
+.order-header {
+    background: rgba(255, 255, 255, 0.03);
+    padding: 10px 25px;
+    border-bottom: 1px solid #30363d;
+}
+
+.order-id {
+    color: #8b949e;
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+/* שורת מוצר בתוך ההזמנה */
+.order-body {
+    padding: 10px 25px;
+}
+
+.order-item-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+    border-bottom: 1px solid rgba(48, 54, 61, 0.5);
+}
+
+.order-item-row:last-child {
+    border-bottom: none;
+}
+
+/* צד ימין: תמונה + שם + מחיר ניאון */
+.item-right-group {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.item-img-container {
+    width: 65px;
+    height: 65px;
+    background: linear-gradient(180deg, #0d1117 0%, #161b22 100%);
+    border: 1px solid #30363d;
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.item-img-container img {
+    max-width: 80%;
+    max-height: 80%;
+    object-fit: contain;
+    filter: drop-shadow(0 0 8px rgba(72, 52, 212, 0.3));
+}
+
+.item-text-content {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.item-name {
+    color: #ffffff;
+    font-size: 1.25rem;
+    font-weight: 800;
+}
+
+.item-price-each {
+    color: #39ff14; /* ירוק ניאון כמו בחנות */
+    font-size: 1rem;
+    font-weight: 700;
+    text-shadow: 0 0 10px rgba(57, 255, 20, 0.2);
+}
+
+/* צד שמאל: כמות בעיצוב כפתור */
+.qty-text {
+    background: linear-gradient(90deg, #ff9f43 0%, #ff6b6b 100%); /* גרדיאנט מלאי */
+    color: white;
+    padding: 6px 16px;
+    border-radius: 6px;
+    font-weight: 900;
+    font-size: 0.9rem;
+    box-shadow: 0 0 15px rgba(255, 107, 107, 0.2);
+}
+
+/* פוטר - סה"כ הזמנה */
+.order-footer {
+    padding: 20px 25px;
+    background: rgba(0, 0, 0, 0.2);
+    border-top: 1px dashed #30363d;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.total-price-container {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.total-label {
+    color: #8b949e;
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+.total-amount {
+    color: #ffffff;
+    font-size: 1.8rem;
+    font-weight: 900;
+    text-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
+}
+
+/* עיצוב להודעת "אינך מחובר" */
+.no-user-logged {
+    text-align: center;
+    padding: 60px;
+    background: #161b22;
+    border-radius: 12px;
+    border: 1px solid #30363d;
+    z-index: 1;
+}
+
+.no-user-logged h2 { color: #ffffff; margin-bottom: 15px; }
+.no-user-logged p { color: #8b949e; margin-bottom: 25px; }
+
+.login-redirect-btn {
+    background: linear-gradient(135deg, #4834d4 0%, #5a45e5 100%);
+    color: white;
+    border: none;
+    padding: 12px 30px;
+    border-radius: 8px;
+    font-weight: 700;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(72, 52, 212, 0.3);
+}

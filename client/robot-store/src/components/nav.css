@@ -1,0 +1,137 @@
+@import url('https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;700;800&display=swap');
+
+.navbar-container {
+    width: 100%;
+    /* שינוי צבע הרקע שיהיה שונה מהאתר (#0b0e14) */
+    background: #11141a; 
+    height: 70px; /* קיצור קטן של הגובה למראה מהודק יותר */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 2000;
+    /* מסגרת דקה ואלגנטית 1px */
+    border-bottom: 1px solid #30363d;
+    font-family: 'Heebo', sans-serif;
+    direction: rtl;
+    /* הוספת צל עדין להפרדה */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.nav-content-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr; 
+    align-items: center;
+    width: 95%;
+    max-width: 1600px;
+}
+
+/* קבוצת הקישורים במרכז */
+.nav-links {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: #8b949e; /* צבע מעט יותר שקט */
+    font-weight: 500;
+    font-size: 1rem;
+    position: relative;
+    padding: 8px 0;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+}
+
+/* הפס התחתון המודרני */
+.nav-link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 1px; /* פס דק יותר למראה יוקרתי */
+    bottom: -2px;
+    right: 0;
+    background-color: #4834d4;
+    transition: width 0.3s ease;
+}
+
+.nav-link:hover {
+    color: #ffffff;
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+/* צד ימין - איזור משתמש */
+.user-section {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.user-logged {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.user-greeting {
+    color: #ffffff;
+    font-size: 0.95rem;
+    font-weight: 400;
+}
+
+/* כפתור יציאה - קצוות חדים 2px */
+.logout-btn {
+    background: #3c2bb3;
+    color: #ffffff;
+    border: none;
+    padding: 6px 16px;
+    font-family: 'Heebo', sans-serif;
+    font-weight: 700;
+    cursor: pointer;
+    border-radius: 2px; /* קצוות חדים 2026 */
+    font-size: 0.85rem;
+    transition: all 0.2s ease;
+}
+
+.logout-btn:hover {
+    background: #4834d4;
+    box-shadow: 0 0 15px rgba(72, 52, 212, 0.3);
+}
+
+/* כפתורי התחברות/הרשמה - חדים ודקים */
+.auth-links {
+    display: flex;
+    gap: 12px;
+}
+
+.signup-btn {
+    background: #4834d4;
+    color: white;
+    padding: 6px 18px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 0.9rem;
+    border-radius: 2px; /* קצוות חדים */
+    transition: background 0.2s;
+}
+
+.login-btn {
+    color: #ffffff;
+    padding: 6px 18px;
+    text-decoration: none;
+    font-size: 0.9rem;
+    border: 1px solid #30363d;
+    border-radius: 2px; /* קצוות חדים */
+    transition: all 0.2s;
+}
+
+.login-btn:hover {
+    border-color: #8b949e;
+    background: rgba(255, 255, 255, 0.05);
+}
