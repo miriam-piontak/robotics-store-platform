@@ -30,7 +30,7 @@ function Login() {
         else {
             // נבדוק אם המשתמש כבר קיים
             try {
-                const response = await fetch("http://localhost:8080/api/customerApi/getCustomerByNameAndPin", {
+                const response = await fetch("https://robot-store-backend.onrender.com/api/customerApi/getCustomerByNameAndPin", {
                     method: "POST",
                     headers: { "Content-Type": "application/json" },
                     body: JSON.stringify({

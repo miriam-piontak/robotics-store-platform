@@ -1,5 +1,5 @@
 import axios from "axios"
-const url = "http://localhost:8080/api/robotApi";
+const url = "https://robot-store-backend.onrender.com/api/robotApi";
 
 //חיפוש כל הרובוטים
 export const getAll = async() => {
@@ -34,4 +34,4 @@ export const addRobot = async(robot) => {
         console.log(e)
     }
 }
-export const getImageUrl = (img) => `http://localhost:8080/${img}`;
+export const getImageUrl = (img) => `https://robot-store-backend.onrender.com/${img}`;

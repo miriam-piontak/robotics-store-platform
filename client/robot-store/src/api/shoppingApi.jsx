@@ -1,5 +1,5 @@
 import axios from "axios"
-const url = "http://localhost:8080/api/shoppingApi";
+const url = "https://robot-store-backend.onrender.com/api/shoppingApi";
 
 //חיפוש כל הקניות
 export const getAll = async() => {

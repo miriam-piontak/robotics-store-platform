@@ -32,7 +32,7 @@ function Cart() {
         }
 
         try {
-            const response = await fetch("http://localhost:8080/api/shoppingApi/postShopping", {
+            const response = await fetch("https://robot-store-backend.onrender.com/api/shoppingApi/postShopping", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify(orderObj)
@@ -60,7 +60,7 @@ function Cart() {
                     {arr.map(a => (
                         <div className="cart-item-row" key={a._id}>
                             <div className="item-image">
-                                <img src={"http://localhost:8080/" + a.img} alt={a.robotName} />
+                                <img src={"https://robot-store-backend.onrender.com/" + a.img} alt={a.robotName} />
                             </div>
 
                             <div className="item-info">

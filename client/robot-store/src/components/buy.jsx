@@ -24,7 +24,7 @@ function Buy() {
 
             try {
                 //שליפת ההזמנות מהשרת לפי מזהה הלקוח
-                const response = await fetch(`http://localhost:8080/api/shoppingApi/getShoppingByCustomerId/${currentUser.pin}`);
+                const response = await fetch(`https://robot-store-backend.onrender.com/api/shoppingApi/getShoppingByCustomerId/${currentUser.pin}`);
                 //המרת התגובה לפורמט JSON
                 const data = await response.json();
                 //עדכון המערך המקומי עם ההזמנות שנשלפו
@@ -76,7 +76,7 @@ function Buy() {
                                     <div key={index} className="order-item-row">
                                         <div className="item-right-group">
                                             <div className="item-img-container">
-                                                {robot.img && <img src={"http://localhost:8080/" + robot.img} alt={robot.robotName} />}
+                                                {robot.img && <img src={"https://robot-store-backend.onrender.com/" + robot.img} alt={robot.robotName} />}
                                             </div>
                                             <div className="item-text-content">
                                                 <span className="item-name">{robot.robotName}</span>
