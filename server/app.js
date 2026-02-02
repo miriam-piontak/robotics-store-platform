@@ -27,13 +27,12 @@ app.use("/api/robotApi", robot);
 app.use("/api/shoppingApi", shopping);
 
 // חיבור למונגו
-mongoose.connect('mongodb://localhost:27017/shop')
-    .then(s => { console.log('Connected to MongoDB!!!') })
-    .catch(e => console.log(e.message));
+// חיבור למונגו - מעודכן
+const mongoURI = process.env.MONGODB_URI || 'mongodb://localhost:27017/shop';
 
-app.get("/test", (req, res) => {
-    res.send("השרת עובד!");
-});
+mongoose.connect(mongoURI)
+    .then(s => { console.log('Connected to MongoDB SUCCESS!!!') })
+    .catch(e => console.log('Connection Error:', e.message));
 
 // פונקציית האזנה
 app.listen(8080, () => {
