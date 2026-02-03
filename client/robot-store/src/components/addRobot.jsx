@@ -24,7 +24,7 @@ const AddRobot = () => {
 
     //שליפת כל הקטגוריות מהשרת
     useEffect(() => {
-        fetch("https://robot-store-backend.onrender.com/api/categoryApi/getAllCategories")
+        fetch("http://localhost:8080/api/categoryApi/getAllCategories")
             .then(res => res.json())
             .then(data => setCategories(data))
             .catch(err => console.error("שגיאה בטעינת קטגוריות:", err));
@@ -40,7 +40,7 @@ const AddRobot = () => {
         e.preventDefault();
         try {
             //שליחת נתוני הרובוט לשרת
-            const response = await fetch("https://robot-store-backend.onrender.com/api/robotApi/postRobot", {
+            const response = await fetch("http://localhost:8080/api/robotApi/postRobot", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json"

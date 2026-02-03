@@ -28,7 +28,7 @@ function SignUp() {
 
         // נשלח את האוביקט לסרבר
         try {
-            const response = await fetch("https://robot-store-backend.onrender.com/api/customerApi/postCustomer", {
+            const response = await fetch("http://localhost:8080/api/customerApi/postCustomer", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify(newUser)

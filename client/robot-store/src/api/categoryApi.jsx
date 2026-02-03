@@ -1,5 +1,5 @@
 import axios from "axios"
-const url = "https://robot-store-backend.onrender.com/api/categoryApi";
+const url = "http://localhost:8080/api/categoryApi";
 
 //חיפוש כל הקטגוריות
 export const getAll = async() => {
