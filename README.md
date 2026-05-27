@@ -16,11 +16,3 @@ This project provides a robust e-commerce platform for robotics. It features a c
 * **Backend:** Node.js, Express
 * **Database:** MongoDB
 * **API:** RESTful architecture
-
-## ⚙️ Installation Instructions
-To run this project locally, follow these steps:
-
-1. **Clone the repository:**
-```bash
-   git clone [YOUR_REPO_URL]
-   cd FullStack-Robotics-Marketplace
